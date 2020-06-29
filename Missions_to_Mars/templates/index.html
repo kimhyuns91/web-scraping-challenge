@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mission to Mars</title>
+  
+ <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+
+<body style="background-color: rgb(127, 172, 202);">
+  <div class="container">
+  
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid text-center" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtUJrUcekyf1joFKtnGmAXKUHlSbsCi9SWHQ&usqp=CAU)">
+      <div class="container">
+        <h1 class="display-4" style="font-weight: bold;color:black;">Mission to Mars</h1>
+        <a href="/scrape" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Scrape New
+          Data</a>
+      </div>
+    </div>
+
+    <!-- News Scraping -->
+    <div class="container">
+      <h2 style="color: rgb(0, 0, 0);"><strong>Mars News</strong></h2>
+      <hr>
+      <h4>{{ mars.news_title[0] }}</h4>
+      <p>{{ mars.news_p[0] }}</p>
+    </div>
+
+    
+    <div class="container">
+          <div class='row'>
+            <!-- Placing the Image of Mars -->
+            <div class="col-lg-8 col-md-8 col-sm-6">
+              <h3 style="color: rgb(73, 73, 57);text-align: center;">Featured Mars Image</h3>
+              <img src="{{ mars.featured_image_url[0] }}" style="width:100%;" alt="featured mars image">
+            </div>
+            <!-- Weather Scraping -->
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <br/> <br/>
+              <div class="card" style="max-width: 18rem; background-color:rgb(123, 140, 148);">
+                <div class="card-body" style="border-left: 0px;">
+                  <h5 class="card-title"><strong>Current Weather on Mars</strong></h5>
+                  <p class="card-text">{{ mars.mars_weather }}</p>
+                </div> 
+              </div>
+              <br/>
+              <!-- Facts Scraping -->
+              <div>
+                <h3 style="color:rgb(73, 73, 57)"><strong>Mars Facts</strong></h3>
+                <table">{{ mars.html_table|safe }}</table>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+    <h1 style="padding-top:30px; padding-bottom: 30px; text-align: center; color:rgb(73, 73, 57);font-family:Impact;">
+      Mars Hemispheres</h1>
+
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <h4 style="text-align: center;"> {{  mars.hemisphere_image_urls["title"][0]  }} </h4>
+            <img src="{{ mars.hemisphere_image_urls['img_url'][0] }}" alt="{{ mars.hemisphere_image_urls['title'][0] }}" style="max-width:100%; height:auto;"> 
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <h4 style="text-align: center;"> {{  mars.hemisphere_image_urls["title"][1]  }} </h4>
+            <img src="{{ mars.hemisphere_image_urls['img_url'][1] }}" alt="{{ mars.hemisphere_image_urls['title'][1] }}" style="max-width:100%; height:auto;"> 
+            <br/>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12">
+              <br/>
+              <h4 style="text-align: center;"> {{  mars.hemisphere_image_urls["title"][2]  }} </h4>
+              <img src="{{ mars.hemisphere_image_urls['img_url'][2] }}" alt="{{ mars.hemisphere_image_urls['title'][2] }}" style="max-width:100%; height:auto;"> 
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12">
+              <br/>
+              <h4 style="text-align: center;"> {{  mars.hemisphere_image_urls["title"][3]  }} </h4>
+              <img src="{{ mars.hemisphere_image_urls['img_url'][3] }}" alt="{{ mars.hemisphere_image_urls['title'][3] }}" style="max-width:100%; height:auto;"> 
+              <br/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
