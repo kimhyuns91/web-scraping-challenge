@@ -40,4 +40,4 @@ Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter will be used for 
 
 Using MongoDB with Flask templating, a new HTML that displays all of the information that was scraped from the URLs above will be created.
 
-![](Mission_to_Mars/Screenshot/Web_Page.png)
+![](Missions_to_Mars/Screenshot/Web_Page.png)
