@@ -1,4 +1,4 @@
-# Web Scraping Homework - Mission to Mars
+# Web Scraping - Mission to Mars
 
 In this project, a web application will be built that contains the scrapes of various websites for data related to the Mission to Mars and displays the information in a single HTML page.
 
